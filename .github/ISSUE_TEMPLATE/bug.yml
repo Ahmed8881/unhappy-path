@@ -1,0 +1,15 @@
+name: Bug
+description: A script crashes or the skill makes Claude do the wrong thing.
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: Command or prompt, what you expected, what you got. Paste errors as text.
+    validations: { required: true }
+  - type: input
+    id: env
+    attributes:
+      label: Environment
+      placeholder: Node 22, macOS, Claude Code 2.x, skill 0.1.0

@@ -1,0 +1,13 @@
+name: Idea
+description: A new state, rule, hostile data variant, or framework to support.
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What real UI bug would this catch or prevent?
+    validations: { required: true }
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal

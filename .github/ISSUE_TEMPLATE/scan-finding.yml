@@ -1,0 +1,27 @@
+name: scan.mjs false positive or missed case
+description: The scanner flagged correct code, or missed a real missing state.
+labels: [scanner]
+body:
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Kind
+      options: [False positive (flagged correct code), Missed case (did not flag a real problem)]
+    validations: { required: true }
+  - type: input
+    id: rule
+    attributes:
+      label: Rule
+      placeholder: e.g. map-no-empty
+  - type: textarea
+    id: code
+    attributes:
+      label: Minimal code sample
+      description: The smallest file that reproduces it. Remove anything private.
+      render: tsx
+    validations: { required: true }
+  - type: textarea
+    id: expected
+    attributes:
+      label: What should happen
+    validations: { required: true }
