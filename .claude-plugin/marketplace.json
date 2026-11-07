@@ -1,0 +1,15 @@
+{
+  "name": "unhappy-path",
+  "owner": { "name": "Ahmed Butt", "url": "https://github.com/Ahmed8881" },
+  "metadata": { "description": "UI states skill for Claude Code by Ahmed Butt." },
+  "plugins": [
+    {
+      "name": "unhappy-path",
+      "source": "./",
+      "description": "Every data-driven UI ships with its loading, empty, error, overflow, and offline states.",
+      "version": "0.1.0",
+      "category": "development",
+      "keywords": ["frontend", "ui", "states", "error-handling"]
+    }
+  ]
+}

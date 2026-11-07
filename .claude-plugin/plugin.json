@@ -1,0 +1,10 @@
+{
+  "name": "unhappy-path",
+  "version": "0.1.0",
+  "description": "Makes Claude build the UI states it usually skips: loading, empty, error, partial, overflow, offline, and no-permission, then checks them with hostile data and a static scan.",
+  "author": { "name": "Ahmed Butt", "url": "https://github.com/Ahmed8881" },
+  "homepage": "https://github.com/Ahmed8881/unhappy-path",
+  "repository": "https://github.com/Ahmed8881/unhappy-path",
+  "license": "MIT",
+  "keywords": ["frontend", "ui", "states", "empty-state", "error-handling", "loading", "react", "vue", "skill"]
+}
