@@ -1,0 +1,39 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  skill:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 22
+
+      - name: Skill structure and manifests
+        run: node .github/lint-skill.mjs
+
+      - name: Script self-tests
+        working-directory: skills/unhappy-path
+        run: |
+          node scripts/scan.mjs --test
+          node scripts/fixtures.mjs --test
+          node scripts/matrix.mjs --test
+
+      - name: Scan passes known-good code
+        run: node skills/unhappy-path/scripts/scan.mjs evals/fixtures/good
+
+      - name: Scan still flags known-bad code
+        run: |
+          if node skills/unhappy-path/scripts/scan.mjs evals/fixtures/bad; then
+            echo "scan.mjs passed code it must flag"; exit 1
+          fi
