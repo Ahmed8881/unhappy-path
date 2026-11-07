@@ -94,6 +94,11 @@ at each one. Then render one component across every state side by side:
 node scripts/matrix.mjs fixtures.json --component path/to/render.mjs > states.html
 ```
 
+`render.mjs` default-exports `(data, variant) => htmlString` (for React, wrap the
+component in `renderToStaticMarkup`). A variant that throws shows as a red
+"Crashed" cell and the script exits 1: that is a missing state, fix the
+component. Delete `states.html` and any temporary render file when done.
+
 ## Step 4 - Scan before handing over
 
 ```bash
