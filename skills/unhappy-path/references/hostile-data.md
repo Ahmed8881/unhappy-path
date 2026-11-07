@@ -25,8 +25,9 @@ node scripts/fixtures.mjs sample.json --only long,nulls
 | `xss` | `<img src=x onerror=alert(1)>` and friends | `innerHTML` / `dangerouslySetInnerHTML` / `v-html` with user data |
 | `whitespace` | leading/trailing spaces, newlines, tabs | Untrimmed input, newline in single-line cells |
 
-Dates: strings that parse as dates get `"not-a-date"` in `nulls`-style
-variants and far past/future values in `huge-numbers`.
+Ids (`id`, `key`, `slug`, `*Id`) are never changed, so list keys stay unique.
+Dates, URLs, and emails keep their shape in text variants; `huge-numbers`
+moves dates to the far past and future.
 
 ## Beyond data
 
